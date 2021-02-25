@@ -7,6 +7,10 @@
     
     - We can always use this project to learn the basics of making a dashboard, and then spend time in the future making a really interesting dashboard that would require more work. 
 
+- Discuss what is the best way to use Github and collaborate:
+    - Will we use branches and work on the same files or different files?
+    - How/If we will use pull requests. 
+
 - Divide up the following assignments for the proposal:
 
     1. Motivation and Purpose

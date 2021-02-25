@@ -15,7 +15,10 @@
     - Set a timeline for tasks and track our progress according to this timeline at each meeting and more as needed over Slack. 
 
 - Communication:
-    - Use Slack group for communication between meetings. 
+    - Use Slack group for communication between meetings.
+
+- Collaboration on Github:
+    - Determine how we will collaborate (for example work on separate files on separate branches, or work on same files in separate branches. If/How we will use pull requests.)
 
 - Availability:
     - Add any times when team members are not available. 
