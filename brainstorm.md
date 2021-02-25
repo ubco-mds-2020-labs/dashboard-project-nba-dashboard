@@ -21,6 +21,8 @@
 
 - A dashboard showing shot selection of different players
     - This would require a dataset with coordinates of shot locations and a way to map them onto a visualization. 
+    - Here is an example of a dashboard that does this: [NBASavant](https://www.nbasavant.com/shot_search.php)
+    - This [link](https://datavizardry.com/2020/01/28/nba-shot-charts-part-1/) Shows how to get shot chart data from the NBA API in python.
 
 - Players performance comparisons before and after injuries:
     - I think this may be too complicated for this project. 
