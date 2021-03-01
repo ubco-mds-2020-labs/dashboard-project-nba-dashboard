@@ -3,7 +3,7 @@
 ## Our Pledge
 
 We as co-owners of NBA Analytics pledge to make our business and community
-harassment-free, open, welcoming to all members. No mmember of our team 
+harassment-free, open, welcoming to all members. No member of our team 
 or business partner shall be harassed in any manner regardless of age, body
 type, disability, ethnicity, race, religion, gender identity and expression, 
 sexual identity and orientation,socio-economic status, nationality and coffee
