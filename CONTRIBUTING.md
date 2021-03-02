@@ -18,3 +18,7 @@ Once your changes are ready to be submitted, make sure to push your changes to G
 
 The code of conduct for contributors can be found at [code of conduct.md](https://github.com/ubco-mds-2020-labs/nba_analytics/blob/main/Code%20of%20Conduct.md).
 
+## Attribution: 
+
+This contribution guide was adapted from the [pandas contributing.md file](https://github.com/pandas-dev/pandas/blob/master/.github/CONTRIBUTING.md).
+

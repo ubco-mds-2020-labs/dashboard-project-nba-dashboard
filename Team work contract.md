@@ -3,7 +3,7 @@
 ## Temporal
 
 1. All group members will be punctual. Meetings will start five minutes after the agreed
-start time and everyone should be there and ready by then.
+start time and everyone should be present and prepared.
 2. We should turn up to all meetings unless it has been agreed beforehand or unless there
 are unavoidable events such as illness.
 3. All group members will remain in the meeting until (a) all tasks for that meeting are
@@ -14,7 +14,7 @@ in length
 
 ## Procedural
 
-1. All group members will come to the meetings prepared by reading the assigned material (as much as possible), and coming with ideas pertaining to the tasks and decisions to be made.
+1. All group members will come to the meetings prepared by reading the assigned material (as much as possible), and coming prepared with ideas pertaining to the tasks and decisions to be made.
 2. Tasks that group members agree to undertake should be completed to the agreed
 deadline. If it looks as though there will be a problem meeting a deadline, the person
 concerned should seek help from other members of the team in time to avoid a delay.
@@ -30,7 +30,7 @@ broken.
 member.
 2. Each member will take turns listening as well as talking, and active listening will be a
 strategy for all group discussions.
-3. Sexist and racist remarks are not acceptable.
+3. Sexist, racist, and other discriminatory remarks are not acceptable.
 4. Aggressive and dominating behaviour is not acceptable.
 
 
@@ -40,7 +40,7 @@ strategy for all group discussions.
 meeting. Roles will rotate each meeting.
 2. The leader will, at the beginning of a meeting, set sub-goals. These sub-goals will be
 presented to the group for a consensus of approval. The leader is also responsible for the
-presentation of the group material to the rest of the class.
+presentation of the group material to the rest of the group.
 3. The secretary is responsible for taking in-session notes and preparing presentation
 materials from these notes.
 4. The timekeeper is responsible for keeping track of the time allotted to each discussion,

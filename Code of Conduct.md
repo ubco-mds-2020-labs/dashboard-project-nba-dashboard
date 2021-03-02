@@ -3,7 +3,7 @@
 ## Our Pledge
 
 We as co-owners of NBA Analytics pledge to make our business and community
-harassment-free, open, welcoming to all members. No member of our team 
+harassment-free, open, and welcoming to all members. No member of our team 
 or business partner shall be harassed in any manner regardless of age, body
 type, disability, ethnicity, race, religion, gender identity and expression, 
 sexual identity and orientation,socio-economic status, nationality and coffee
@@ -58,7 +58,7 @@ representative at an online or offline event.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to the community leaders responsible for enforcement at [conrad.yeung@hotmail.com]. All complaints will be reviewed and investigated promptly and fairly.
+reported to the community leaders responsible for enforcement at [connorfairbanks@gmail.com]. All complaints will be reviewed and investigated promptly and fairly.
 
 All community leaders are obligated to respect the privacy and security of the
 reporter of any incident.
