@@ -13,5 +13,5 @@ This NBA Analytics dashboard enables the users to analyze player statistics as w
 ## Sketch
 
 ```
-![Dashboard Prototype](https://github.com/ubco-mds-2020-labs/nba_analytics/blob/main/Dashboard_prototype.png)
+![Dashboard Prototype](https://raw.githubusercontent.com/ubco-mds-2020-labs/nba_analytics/main/Dashboard_prototype.png)
 ```
