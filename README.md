@@ -18,4 +18,4 @@ This NBA Analytics dashboard enables the users to analyze player statistics as w
 
 ## Beginning Stages of App Development
 
-Dashboard app can be found here : [Heroku App](https://nba-analytics-app.herokuapp.com/). The code for the app is in the main branch of this repository as [app.py](https://github.com/ubco-mds-2020-labs/nba_analytics/blob/main/app.py).
+Dashboard app can be found here : [NBA Analytics Heroku App](https://nba-analytics-app.herokuapp.com/). The code for the app is in the main branch of this repository as [app.py](https://github.com/ubco-mds-2020-labs/nba_analytics/blob/main/src/app.py).
