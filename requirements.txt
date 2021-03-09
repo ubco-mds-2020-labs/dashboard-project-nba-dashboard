@@ -3,5 +3,6 @@ plotly==4.14.3
 pandas
 numpy
 altair
+vega_datasets
 dash_bootstrap_components
 gunicorn
