@@ -1,0 +1,7 @@
+dash==1.19.0
+plotly==4.14.3
+pandas
+numpy
+altair
+dash_bootstrap_components
+gunicorn
