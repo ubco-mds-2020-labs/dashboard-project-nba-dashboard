@@ -14,7 +14,7 @@ alt.renderers.set_embed_options(actions=False)
 
 # ALl the player data for NBA
 columns_to_skip = ['birth_year', 'birth_month', 'height','height_cm', 'weight', 'weight_kg', 'nationality', 'high_school', 'draft_round', 'draft_pick', 'draft_team']
-player_data = pd.read_csv('https://github.com/naveen-chalasani/nba-analytics-heroku-app/raw/main/data/players_stats_by_season_full_details.csv', usecols = lambda x: x not in columns_to_skip)
+player_data = pd.read_csv('https://github.com/ubco-mds-2020-labs/nba_analytics/blob/main/data/players_stats_by_season_full_details.csv', usecols = lambda x: x not in columns_to_skip)
 player_data = player_data[player_data['League'] == 'NBA'].drop('League', axis = 1)
 player_data['birth_date'] = pd.to_datetime(player_data['birth_date'], format='%b %d, %Y')
 player_data['Season'] = pd.to_numeric(player_data['Season'].str.split(expand = True)[0])
