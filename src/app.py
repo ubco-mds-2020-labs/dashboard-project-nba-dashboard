@@ -119,7 +119,7 @@ longform_stat_list = ['Average Player Minutes Played per Game', 'Field Goals Mad
 '3-Pointers Made per Game', '3-Pointers Attempted per Game', 'Free-throws Made per Game',
 'Free-throws Attempted per Game', 'Turnovers per Game', 'Personal Fouls per Game', 'Offensive Rebounds per Game',
 'Defensive Rebounds per Game', 'Total Rebounds per Game', 'Assists per Game', 'Steals per Game', 
-'Blocks per Game', 'Points per Game', 'Average Player Weight', 'Average Player Height', 'Average Player Body Mass Index', 'Percentage of Field Goals That Are 3-pointers']
+'Blocks per Game', 'Points per Game', 'Average Player Weight (lbs)', 'Average Player Height (cm)', 'Average Player Body Mass Index', 'Ratio of Field Goals That Are 3-pointers']
 
 # dictionary linking dropdown list key to stat value column labels
 stat_dict = {'Average Player Minutes Played per Game':'MIN/Game', 'Field Goals Made per Game':'FGM/Game', 
@@ -869,7 +869,7 @@ def plot_altair(xcol, ycol):
     Input('statistic-1', 'value'))
 def simple_stat(stat):
     # Use dictionary key to get the proper column
-    leave_list = ['Average Player Minutes Played per Game', 'Average Player Weight', 'Average Player Height', 'Average Player Body Mass Index', 'Percentage of Field Goals That Are 3-pointers']
+    leave_list = ['Average Player Minutes Played per Game', 'Average Player Weight (lbs)', 'Average Player Height (cm)', 'Average Player Body Mass Index', 'Ratio of Field Goals That Are 3-pointers']
     stat_label = stat_dict[stat]
     if stat not in leave_list:
         stat = stat + ' per Team'
@@ -894,7 +894,7 @@ def simple_stat_age(stat):
     Input('statistic-1', 'value'))
 def type_stat(stat):
     # Use dictionary key to get the proper column
-    leave_list = ['Average Player Minutes Played per Game', 'Average Player Weight', 'Average Player Height', 'Average Player Body Mass Index', 'Percentage of Field Goals That Are 3-pointers']
+    leave_list = ['Average Player Minutes Played per Game', 'Average Player Weight (lbs)', 'Average Player Height (cm)', 'Average Player Body Mass Index', 'Ratio of Field Goals That Are 3-pointers']
     stat_label = stat_dict[stat]
     if stat not in leave_list:
         stat = stat + ' per Team'
