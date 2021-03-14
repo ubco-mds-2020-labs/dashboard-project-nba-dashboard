@@ -35,8 +35,9 @@ ggplot(subset(chart_1,Player == 'Kobe Bryant' & Stage == 'Regular_Season')) +
  # xlim(1999, 2012) + 
   ylim(0, 40) + 
   ylab("Points") +
-  ggtitle('Average Points by Season') +
-  scale_fill_manual("Points_type", values = c('2 Point' = 'steelblue2', '3 Point' = 'darkorange', 'Free throws' = 'coral2')) + 
+  ggtitle('Average Game Points by Season') +
+  #scale_fill_manual("Points_type", values = c('2 Point' = 'steelblue2', '3 Point' = 'darkorange', 'Free throws' = 'coral2')) + 
+  scale_x_continuous(breaks = chart_3$Season) +
   theme(
     axis.text.x = element_text(angle = 90),
     legend.position="bottom",
@@ -59,10 +60,39 @@ chart_2
 
 ```{r}
 ggplot(subset(chart_2,Player == 'Kobe Bryant' & Stage == 'Regular_Season')) + 
-  aes(x = Season, y = Assists_per_game, colour = 'blue',size = 1) +
-  stat_summary(fun = mean, geom = 'line') +
+  aes(x = Season, y = Assists_per_game, colour = 'blue') +
+  stat_summary(fun = mean, geom = 'line', size =2) +
   ylab("Assists") +
   ggtitle('Average Assists by Season') +
+  scale_x_continuous(breaks = chart_2$Season) +
+  theme(
+    axis.text.x = element_text(angle = 90),
+    legend.position = "none",
+    plot.title = element_text(hjust = 0.5),
+    panel.grid.major.x=element_blank(),
+    panel.grid.minor.x=element_blank(),
+    panel.grid.major.y=element_line(colour = 'lightgrey'),
+    panel.grid.minor.y=element_blank(),
+    panel.background=element_rect(fill="white"),
+    axis.line = element_line(colour = 'black'),
+    axis.title.x = element_text(face = 'bold', vjust=-0.5), axis.title.y=element_text(vjust=0.1)
+  ) 
+
+```
+
+
+```{r}
+chart_3
+```
+
+```{r}
+ggplot(subset(chart_3,Player == 'Kobe Bryant' & Stage == 'Regular_Season')) + 
+  aes(x = Season, y = Rebounds_per_game,  fill = Rebound_type) +
+  stat_summary(fun = mean, position = 'stack', geom = 'bar') +
+  ylab("Rebounds") +
+  ggtitle('Average Rebounds by Season') +
+  #scale_fill_manual("Points_type", values = c('Defensive Rebounds' = 'steelblue2', 'Offensive Rebounds' = 'darkorange')) + 
+  scale_x_continuous(breaks = chart_3$Season) +
   theme(
     axis.text.x = element_text(angle = 90),
     legend.position="bottom",
@@ -76,7 +106,64 @@ ggplot(subset(chart_2,Player == 'Kobe Bryant' & Stage == 'Regular_Season')) +
     axis.line = element_line(colour = 'black'),
     axis.title.x = element_text(vjust=-0.5), axis.title.y=element_text(vjust=0.1)
   ) 
-
 ```
+
+
+
+```{r}
+ggplot(subset(chart_4,Player == 'Kobe Bryant' & Stage == 'Regular_Season')) + 
+  aes(x = Season, y = per_game, colour = Blocks.Steals) +
+  stat_summary(fun = mean, geom = 'line', size =2) +
+  ylab("Count") +
+  ggtitle('Average Blocks & Steals by Season') +
+  scale_x_continuous(breaks = chart_2$Season) +
+  theme(
+    axis.text.x = element_text(angle = 90),
+    legend.position="bottom",
+    legend.title=element_blank(),
+    legend.key = element_rect(fill='white'),
+    plot.title = element_text(hjust = 0.5),
+    panel.grid.major.x=element_blank(),
+    panel.grid.minor.x=element_blank(),
+    panel.grid.major.y=element_line(colour = 'lightgrey'),
+    panel.grid.minor.y=element_blank(),
+    panel.background=element_rect(fill="white"),
+    axis.line = element_line(colour = 'black'),
+    axis.title.x = element_text(face = 'bold', vjust=-0.5), axis.title.y=element_text(vjust=0.1)
+  ) +
+  guides(size = 'none', colour = 'legend')
+```
+
+```{r}
+chart_5
+```
+
+
+
+```{r}
+ggplot(subset(chart_5,Player == 'Kobe Bryant' & Stage == 'Regular_Season')) + 
+  aes(x = Season, y = per_game, colour = Turnovers.Fouls) +
+  stat_summary(fun = mean, geom = 'line', size =2) +
+  ylab("Count") +
+  ggtitle('Average Turnovers and Fouls by Season') +
+  scale_x_continuous(breaks = chart_2$Season) +
+  theme(
+    axis.text.x = element_text(angle = 90),
+    legend.position="bottom",
+    legend.title=element_blank(),
+    legend.key = element_rect(fill='white'),
+    plot.title = element_text(hjust = 0.5),
+    panel.grid.major.x=element_blank(),
+    panel.grid.minor.x=element_blank(),
+    panel.grid.major.y=element_line(colour = 'lightgrey'),
+    panel.grid.minor.y=element_blank(),
+    panel.background=element_rect(fill="white"),
+    axis.line = element_line(colour = 'black'),
+    axis.title.x = element_text(face = 'bold', vjust=-0.5), axis.title.y=element_text(vjust=0.1)
+  ) +
+  guides(size = 'none', colour = 'legend')
+```
+
+
 
 
