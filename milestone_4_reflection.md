@@ -8,7 +8,7 @@
 - Graham Kerford
 - Naveen Chalasani
 
-During this week, we decided to implement some of the suggestions we received from Firas. We removed the borders from our plots, and we changed the y-axis for our `true shooting %` graph to start at zero. Removing the borders also improved the aesthetics of the plots (which was one of the feedback suggestions we received from peers). We also improved the structure of our code by adding PEP8 style docstrings to the functions and adding other explanatory comments in the code. 
+During this week, we decided to implement some of the suggestions we received from Firas. We removed the borders of the iframes from our plots, and we changed the y-axis for our `true shooting %` graph to start at zero. Removing the borders also improved the aesthetics of the plots (which was one of the feedback suggestions we received from peers). We also improved the structure of our code by adding PEP8 style docstrings to the functions and adding other explanatory comments in the code. A glossary tab was added to define the statistics used in the dashboard. 
 
 Throughout our testing of the dashboard, we realized that when certain players were selected, some plots had scroll bars around them. These scroll bars were removed. We felt that our python dashboard was quite fast, so we did not make any changes to improve the speed of performance. Automatic deployment from GitHub to Heroku was also implemented this week. 
 
