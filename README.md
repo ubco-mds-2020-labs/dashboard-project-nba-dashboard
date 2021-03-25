@@ -2,7 +2,7 @@
 
 # NBA Analytics Dashboard
 
-Dashboard app can be found here : [NBA Analytics Heroku App](https://nba-analytics-app.herokuapp.com/). The code for the app is in the main branch of this repository as [app.py](https://github.com/ubco-mds-2020-labs/nba_analytics/blob/main/src/app.py).
+Dashboard app can be found here: [NBA Analytics Heroku App](https://nba-analytics-app.herokuapp.com/). The code for the app is on the main branch of this repository as [app.py](https://github.com/ubco-mds-2020-labs/nba_analytics/blob/main/src/app.py).
 
 ## Description of app
 
