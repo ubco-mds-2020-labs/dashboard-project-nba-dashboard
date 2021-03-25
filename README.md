@@ -18,6 +18,6 @@ This NBA Analytics dashboard enables the users to analyze player statistics as w
 
 * Third tab contains visualizations that exhibit overall statistical trends over time in the NBA. This tab helps users analyze how the game has evolved in terms of offensive and defensive statistical indicators. Line charts and bar graphs in this section demonstrate the progression of the game over time in terms of 3 pointers, rebounds, assists, steals, and reliance of teams on their star players. Users will also be able to look at differences between teams that make playoffs and teams that do not. Stats based on draft position may also be included if time permits. 
 
-## Sketch
+## Demo
 
 ![Dashboard prototype](https://raw.githubusercontent.com/ubco-mds-2020-labs/nba_analytics/main/Dashboard_prototype.png)
