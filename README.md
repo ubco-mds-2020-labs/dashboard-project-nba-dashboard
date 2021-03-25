@@ -4,6 +4,10 @@
 
 Dashboard app can be found here: [NBA Analytics Heroku App](https://nba-analytics-app.herokuapp.com/). The code for the app is on the main branch of this repository as [app.py](https://github.com/ubco-mds-2020-labs/nba_analytics/blob/main/src/app.py).
 
+## About
+
+This dashboard contains 3 tabs which observe NBA player & team statistics from 1999 to 2020.
+
 ## Description of app
 
 This NBA Analytics dashboard enables the users to analyze player statistics as well as trends in the NBA. The metrics and visualizations in this dashboard are divided into three different sections (tabs). 
