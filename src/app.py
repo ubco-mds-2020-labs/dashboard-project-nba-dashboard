@@ -28,7 +28,7 @@ df_metrics['career_3PT_%'] = round(df_metrics['3PM'] / df_metrics['3PA'] * 100, 
 df_metrics['Minutes_per_game'] = round(df_metrics['MIN'] / df_metrics['GP'], 2)
 df_metrics.drop(['GP', 'MIN', 'FGM', 'FGA', 'FTM', 'FTA', '3PM', '3PA'], axis = 1, inplace = True)
 
-#  Data for Chart 1 
+#  Data for Chart 1 in tab 1 - Average Points by Season
 df_chart_1 = player_data[['Player', 'Season', 'Stage', 'GP', 'PTS', 'FGM', 'FTM', '3PM']].copy()
 df_chart_1['PTS'] = df_chart_1['PTS'] / df_chart_1['GP']
 df_chart_1['3 Point'] = (df_chart_1['3PM'] * 3) / df_chart_1['GP']
@@ -39,33 +39,33 @@ df_chart_1.drop(['PTS', 'GP', 'FGM', '3PM'], axis = 1, inplace = True)
 df_chart_1 = df_chart_1.melt(id_vars=['Player', 'Season', 'Stage'], var_name = 'Points_type', value_name = "Points_per_game").copy()
 df_chart_1['Points_per_game'] = round(df_chart_1['Points_per_game'], 2)
 
-# Data for Chart 2
+# Data for Chart 2 in tab 1 - Average Assists by Season
 df_chart_2 = player_data[['Player', 'Season', 'Stage', 'GP', 'AST']].copy()
 df_chart_2['Assists_per_game'] = round(df_chart_2['AST'] / df_chart_2['GP'], 2)
 df_chart_2.drop(['GP', 'AST'], axis = 1, inplace = True)
 
-# Data for Chart 3
+# Data for Chart 3 in tab 1 - Average Rebounds by Season
 df_chart_3 = player_data[['Player', 'Season', 'Stage', 'GP', 'ORB', 'DRB']].copy()
 df_chart_3['Offensive Rebounds'] = round(df_chart_3['ORB'] / df_chart_3['GP'], 2)
 df_chart_3['Defensive Rebounds'] = round(df_chart_3['DRB'] / df_chart_3['GP'], 2)
 df_chart_3.drop(['GP', 'ORB', 'DRB'], axis = 1, inplace = True)
 df_chart_3 = df_chart_3.melt(id_vars=['Player', 'Season', 'Stage'], var_name = 'Rebound_type', value_name = "Rebounds_per_game").copy()
 
-# Data for Chart 4
+# Data for Chart 4 in tab 1 - Average Blocks & Steals by Season
 df_chart_4 = player_data[['Player', 'Season', 'Stage', 'GP', 'BLK', 'STL']].copy()
 df_chart_4['Blocks'] = round(df_chart_4['BLK'] / df_chart_4['GP'], 2)
 df_chart_4['Steals'] = round(df_chart_4['STL'] / df_chart_4['GP'], 2)
 df_chart_4.drop(['GP', 'BLK', 'STL'], axis = 1, inplace = True)
 df_chart_4 = df_chart_4.melt(id_vars=['Player', 'Season', 'Stage'], var_name = 'Blocks/Steals', value_name = "per_game").copy()
 
-# Data for Chart 5
+# Data for Chart 5 in tab 1 - Average Turnovers & Fouls by Season
 df_chart_5 = player_data[['Player', 'Season', 'Stage', 'GP', 'TOV', 'PF']].copy()
 df_chart_5['Turnovers'] = round(df_chart_5['TOV'] / df_chart_5['GP'], 2)
 df_chart_5['Fouls'] = round(df_chart_5['PF'] / df_chart_5['GP'], 2)
 df_chart_5.drop(['GP', 'TOV', 'PF'], axis = 1, inplace = True)
 df_chart_5 = df_chart_5.melt(id_vars=['Player', 'Season', 'Stage'], var_name = 'Turnovers/Fouls', value_name = "per_game").copy()
 
-# Data for Chart 11 (chart 1 in second tab)
+# Data for Chart 11 (chart 1 in second tab) - Average Shooting Percentages by Season
 df_chart_11 = player_data[['Player', 'Season', 'Stage', 'FGM', 'FGA', '3PM', '3PA']].copy()
 df_chart_11['2PA'] = df_chart_11['FGA'] - df_chart_11['3PA']
 df_chart_11['2PM'] = df_chart_11['FGM'] - df_chart_11['3PM']
@@ -76,7 +76,7 @@ df_chart_11['eFG_%'] = round(((df_chart_11['FGM'] + (0.5 * df_chart_11['3PM'])) 
 df_chart_11.drop(['FGM', 'FGA', '3PM', '3PA', '2PM', '2PA'], axis = 1, inplace = True)
 df_chart_11 = df_chart_11.melt(id_vars=['Player', 'Season', 'Stage'], var_name = '2PT_3PT_eFG', value_name = "per_game").copy()
 
-# Data for Chart 12
+# Data for Chart 12 (chart 2 in second tab) - True Shooting Percentage by Season
 df_chart_12 = player_data[['Player', 'Season', 'Stage', 'GP', 'PTS', 'FGA', 'FTA']].copy()
 df_chart_12 ['PTS'] = df_chart_12['PTS'] / df_chart_12['GP']
 df_chart_12 ['FGA'] = df_chart_12['FGA'] / df_chart_12['GP']
@@ -85,7 +85,7 @@ df_chart_12['True shooting attempts'] = df_chart_12['FGA'] + 0.44 * df_chart_12[
 df_chart_12['True shooting percentage'] = round(df_chart_12['PTS'] / (2 * df_chart_12['True shooting attempts']) * 100, 2)
 df_chart_12.drop(['GP', 'PTS', 'FGA', 'FTA', 'True shooting attempts'], axis = 1, inplace = True)
 
-# Data for Chart 13 & 14
+# Data for Chart 13 & 14 in second tab - Player Productivity by Season & Player Productivity by Minutes Played
 df_chart_13 = player_data[['Player', 'Season', 'Stage', 'GP', 'PTS', 'MIN', 'FGM', 'FGA', 'FTM', 'FTA', 'ORB', 'DRB', 'STL', 'AST', 'BLK', 'PF', 'TOV']].copy()
 df_chart_13 ['PTS'] = df_chart_13['PTS'] / df_chart_13['GP']
 df_chart_13 ['Minutes Played'] = round(df_chart_13['MIN'] / df_chart_13['GP'], 2)
@@ -185,7 +185,7 @@ NBA_data_age.reset_index(drop=True, inplace=True)
 # and convert it to an integer. 
 NBA_data_age['Season'] = NBA_data_age['Season'].map(lambda x: int(x[-4:len(x)]))
 # Create a column for age by subtracting birth year from the season year 
-#(use year of playoffs)
+# (use year of playoffs)
 NBA_data_age['Age'] = NBA_data_age['Season'] - NBA_data_age['birth_year']
 # Drop ages > 39 years old because there are less than 30 players in these
 # age groups so the average estimates are likely to be innacurate. 
@@ -202,7 +202,7 @@ NBA_age_sum['avg_weight'] = NBA_age_avg['weight']
 # Create a column for average player BMI
 NBA_age_sum['avg_BMI'] = NBA_age_avg['weight_kg']/((NBA_age_avg['height_cm']/100)**2)
 ## All of the following numerical stats per game by age (eg. points, assists, etc.) are 
-##found by getting the stat/game played. 
+## found by getting the stat/game played. 
 # Create a points per game column
 NBA_age_sum['Pts/Game'] = NBA_age_sum['PTS']/NBA_age_sum['GP']
 # Create an assists per game column
@@ -349,10 +349,12 @@ type_seasons = NBA_reg_seasons.append(NBA_playoff_seasons)
 
 #------------------------------------------------------------#
 # Setup app and layout/frontend
-app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+app = dash.Dash(name='NBA Analytics Dashboard', title='NBA Analytics Dashboard', external_stylesheets=[dbc.themes.BOOTSTRAP])
 server = app.server
 
 # cards
+
+# Career FG% card in Player Stats tab
 first_card = dbc.Card(
     dbc.CardBody(children=
         [
@@ -363,6 +365,7 @@ first_card = dbc.Card(
     color='info', inverse=True, style={'text-align': 'center'}
 )
 
+# Career FT% card in Player Stats tab
 second_card = dbc.Card(
     dbc.CardBody(children=
         [
@@ -373,6 +376,7 @@ second_card = dbc.Card(
     color='secondary', inverse=True, style={'text-align': 'center'}
 )
 
+# Career 3-pt% card in Player Stats tab
 third_card = dbc.Card(
     dbc.CardBody(children=
         [
@@ -383,6 +387,7 @@ third_card = dbc.Card(
     color='info', inverse=True, style={'text-align': 'center'}
 )
 
+# Average Minutes per game card in Player Stats tab
 fourth_card = dbc.Card(
     dbc.CardBody(children=
         [
@@ -393,6 +398,7 @@ fourth_card = dbc.Card(
     color='secondary', inverse=True, style={'text-align': 'center'}
 )
 
+# Career FT% card in Advanced Analytics tab
 fifth_card = dbc.Card(
     dbc.CardBody(children=
         [
@@ -403,6 +409,7 @@ fifth_card = dbc.Card(
     color='info', inverse=True, style={'text-align': 'center'}
 )
 
+# Career FT% card in Advanced Analytics tab
 sixth_card = dbc.Card(
     dbc.CardBody(children=
         [
@@ -413,6 +420,7 @@ sixth_card = dbc.Card(
     color='secondary', inverse=True, style={'text-align': 'center'}
 )
 
+# Career 3-pt% card in Advanced Analytics tab
 seventh_card = dbc.Card(
     dbc.CardBody(children=
         [
@@ -423,6 +431,7 @@ seventh_card = dbc.Card(
     color='info', inverse=True, style={'text-align': 'center'}
 )
 
+# Average Minutes per game card in Advanced Analytics tab
 eighth_card = dbc.Card(
     dbc.CardBody(children=
         [
@@ -433,7 +442,7 @@ eighth_card = dbc.Card(
     color='secondary', inverse=True, style={'text-align': 'center'}
 )
 
-
+# display all cards in Player Stats tab using dbc.Row and dbc.Col
 cards = dbc.Row(
     [
         dbc.Col(first_card, width=3), 
@@ -443,6 +452,7 @@ cards = dbc.Row(
     ]
 )
 
+# all cards in Advanced Analytics tab using dbc.Row and dbc.Col
 cards_tab2 = dbc.Row(
     [
         dbc.Col(fifth_card, width=3), 
@@ -451,7 +461,10 @@ cards_tab2 = dbc.Row(
         dbc.Col(eighth_card, width=3)
     ]
 )
+
 # dropdowns
+
+# Player dropdown in first tab
 first_dropdown = html.Div(
     [
         dcc.Dropdown(
@@ -463,6 +476,7 @@ first_dropdown = html.Div(
     style={"width": "100%"}
 )
 
+# Stage dropdown in first tab
 second_dropdown = html.Div(
     [
         dcc.Dropdown(
@@ -474,6 +488,7 @@ second_dropdown = html.Div(
     style={"width": "100%"}
 )
 
+# all dropdowns in Player Stats tab
 dropdowns = dbc.Row(
     [
         dbc.Col(first_dropdown, width=3), 
@@ -482,6 +497,7 @@ dropdowns = dbc.Row(
     ]
 )
 
+# Player dropdown in second tab
 third_dropdown = html.Div(
     [
         dcc.Dropdown(
@@ -493,6 +509,7 @@ third_dropdown = html.Div(
     style={"width": "100%"}
 )
 
+# Stage dropdown in second tab
 fourth_dropdown = html.Div(
     [
         dcc.Dropdown(
@@ -504,6 +521,7 @@ fourth_dropdown = html.Div(
     style={"width": "100%"}
 )
 
+# all dropdowns in Advanced Analytics tab
 dropdowns2 = dbc.Row(
     [
         dbc.Col(third_dropdown, width=3), 
@@ -512,6 +530,7 @@ dropdowns2 = dbc.Row(
     ]
 )
 
+# metric dropdown in NBA trends tab
 fifth_dropdown = html.Div(
     [
         dcc.Dropdown(
@@ -523,6 +542,7 @@ fifth_dropdown = html.Div(
     style={"width": "100%"}
 )
 
+# dropdowns in NBA trends tab
 dropdowns3 = dbc.Row(
     [
         dbc.Col(fifth_dropdown, width=5), 
@@ -530,6 +550,7 @@ dropdowns3 = dbc.Row(
     ]
 )
 
+# Content to display in first tab - Player Stats
 tab1_content = html.Div(
     [
         dropdowns,
@@ -541,15 +562,15 @@ tab1_content = html.Div(
                 dbc.Col(
                     html.Iframe(
                         id='chart-1',
-                        style={'border-width': '1', 'border-color': '#DCDCDC', 'width': '345px', 'height': '300px'}), width = 4),
+                        style={'border-width': '0', 'border-color': '#DCDCDC', 'width': '345px', 'height': '300px', 'overflow': 'hidden'}), width = 4),
                 dbc.Col(
                     html.Iframe(
                         id='chart-2',
-                        style={'border-width': '1', 'border-color': '#DCDCDC', 'width': '345px', 'height': '300px'}), width = 4),
+                        style={'border-width': '0', 'border-color': '#DCDCDC', 'width': '345px', 'height': '300px', 'overflow': 'hidden'}), width = 4),
                 dbc.Col(
                     html.Iframe(
                         id='chart-3',
-                        style={'border-width': '1', 'border-color': '#DCDCDC', 'width': '345px', 'height': '300px'}), width = 4)
+                        style={'border-width': '0', 'border-color': '#DCDCDC', 'width': '345px', 'height': '300px', 'overflow': 'hidden'}), width = 4)
             ]
         ),
         dbc.Row(
@@ -557,16 +578,17 @@ tab1_content = html.Div(
                 dbc.Col(
                     html.Iframe(
                         id='chart-4',
-                        style={'border-width': '1', 'border-color': '#DCDCDC', 'width': '530px', 'height': '300px'}), width = 6),
+                        style={'border-width': '0', 'border-color': '#DCDCDC', 'width': '530px', 'height': '300px', 'overflow': 'hidden'}), width = 6),
                 dbc.Col(
                     html.Iframe(
                         id='chart-5',
-                        style={'border-width': '1', 'border-color': '#DCDCDC', 'width': '530px', 'height': '300px'}), width = 6)
+                        style={'border-width': '0', 'border-color': '#DCDCDC', 'width': '530px', 'height': '300px', 'overflow': 'hidden'}), width = 6)
             ]
         ),
     ]
 )
 
+# Content to display in second tab - Advanced Analytics
 tab2_content = html.Div(
     [
         dropdowns2,
@@ -578,11 +600,11 @@ tab2_content = html.Div(
                 dbc.Col(
                     html.Iframe(
                         id='chart-11',
-                        style={'border-width': '1', 'border-color': '#DCDCDC', 'width': '530px', 'height': '300px'}), width = 6),
+                        style={'border-width': '0', 'border-color': '#DCDCDC', 'width': '530px', 'height': '300px', 'overflow': 'hidden'}), width = 6),
                 dbc.Col(
                     html.Iframe(
                         id='chart-12',
-                        style={'border-width': '1', 'border-color': '#DCDCDC', 'width': '530px', 'height': '300px'}), width = 6)
+                        style={'border-width': '0', 'border-color': '#DCDCDC', 'width': '530px', 'height': '300px', 'overflow': 'hidden'}), width = 6)
             ]
         ),
         dbc.Row(
@@ -590,16 +612,17 @@ tab2_content = html.Div(
                 dbc.Col(
                     html.Iframe(
                         id='chart-13',
-                        style={'border-width': '1', 'border-color': '#DCDCDC', 'width': '530px', 'height': '300px'}), width = 6),
+                        style={'border-width': '0', 'border-color': '#DCDCDC', 'width': '530px', 'height': '300px', 'overflow': 'hidden'}), width = 6),
                 dbc.Col(
                     html.Iframe(
                         id='chart-14',
-                        style={'border-width': '1', 'border-color': '#DCDCDC', 'width': '530px', 'height': '300px'}), width = 6)
+                        style={'border-width': '0', 'border-color': '#DCDCDC', 'width': '530px', 'height': '300px', 'overflow': 'hidden'}), width = 6)
             ]
         ),
     ]
 )
 
+# Content to display in third tab - NBA trends
 tab3_content = html.Div(
     [
         dropdowns3,
@@ -610,11 +633,11 @@ tab3_content = html.Div(
                 dbc.Col(
                     html.Iframe(
                         id='chart-21',
-                        style={'border-width': '1', 'border-color': '#DCDCDC', 'width': '530px', 'height': '300px'}), width = 6),
+                        style={'border-width': '0', 'border-color': '#DCDCDC', 'width': '530px', 'height': '300px', 'overflow': 'hidden'}), width = 6),
                 dbc.Col(
                     html.Iframe(
                         id='chart-22',
-                        style={'border-width': '1', 'border-color': '#DCDCDC', 'width': '530px', 'height': '300px'}), width = 6)
+                        style={'border-width': '0', 'border-color': '#DCDCDC', 'width': '530px', 'height': '300px', 'overflow': 'hidden'}), width = 6)
             ]
         ),
         dbc.Row(
@@ -622,12 +645,184 @@ tab3_content = html.Div(
                 dbc.Col(
                     html.Iframe(
                         id='chart-23',
-                        style={'border-width': '1', 'border-color': '#DCDCDC', 'width': '1090px', 'height': '300px'}), width = 12)
+                        style={'border-width': '0', 'border-color': '#DCDCDC', 'width': '1090px', 'height': '300px', 'overflow': 'hidden'}), width = 12)
             ]
         ),
     ]
 )
 
+# Content to display in fourth tab - Glossary
+tab4_content = html.Div(
+    [
+        html.Br(),
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.H4('Effective Field Goal (eFG) %'),
+                    width = 4),
+                dbc.Col(
+                    html.H5('gives additional weight to 3-pointers made. Formula is  (Field Goals Made + 0.5 * 3-Pointers Made) / Field Goals Attempted'), 
+                    width = 8),
+            ]
+        ),
+        html.Br(),
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.H4('True Shooting Percentage'),
+                    width = 4),
+                dbc.Col(
+                    html.H5('is a measure of shooting efficiency that takes into account field goals, 3-point field goals, and free throws. Formula is Points / (2 * TSA). where TSA is - True Shooting Attempts; the formula is FGA + 0.44 * FTA.'), 
+                    width = 8),
+            ]
+        ),
+        html.Br(),
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.H4('Game Score'),
+                    width = 4),
+                dbc.Col(
+                    html.H5("is a rough measure of a player's productivity. Formula is PTS + 0.4 * FG - 0.7 * FGA - 0.4 * (FTA - FTM) + 0.7 * ORB + 0.3 * DRB + STL + 0.7 * AST + 0.7 * BLK - 0.4 * PF - TOV."), 
+                    width = 8),
+            ]
+        ),
+        html.Br(),
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.H4('PTS'),
+                    width = 4),
+                dbc.Col(
+                    html.H5("Points Scored"), 
+                    width = 8),
+            ]
+        ),
+        html.Br(),
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.H4('FGM'),
+                    width = 4),
+                dbc.Col(
+                    html.H5("Field Goals Made"), 
+                    width = 8),
+            ]
+        ),
+        html.Br(),
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.H4('FGA'),
+                    width = 4),
+                dbc.Col(
+                    html.H5("Field Goals Attempted"), 
+                    width = 8),
+            ]
+        ),
+        html.Br(),
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.H4('FTM'),
+                    width = 4),
+                dbc.Col(
+                    html.H5("Free Throws Made"), 
+                    width = 8),
+            ]
+        ),
+        html.Br(),
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.H4('FTA'),
+                    width = 4),
+                dbc.Col(
+                    html.H5("Free Throws Attempted"), 
+                    width = 8),
+            ]
+        ),
+        html.Br(),
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.H4('ORB'),
+                    width = 4),
+                dbc.Col(
+                    html.H5("Offensive Rebounds"), 
+                    width = 8),
+            ]
+        ),
+        html.Br(),
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.H4('DRB'),
+                    width = 4),
+                dbc.Col(
+                    html.H5("Defensive Rebounds"), 
+                    width = 8),
+            ]
+        ),
+        html.Br(),
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.H4('STL'),
+                    width = 4),
+                dbc.Col(
+                    html.H5("Steals"), 
+                    width = 8),
+            ]
+        ),
+        html.Br(),
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.H4('AST'),
+                    width = 4),
+                dbc.Col(
+                    html.H5("Assists"), 
+                    width = 8),
+            ]
+        ),
+        html.Br(),
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.H4('BLK'),
+                    width = 4),
+                dbc.Col(
+                    html.H5("Blocks"), 
+                    width = 8),
+            ]
+        ),
+        html.Br(),
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.H4('PF'),
+                    width = 4),
+                dbc.Col(
+                    html.H5("Personal Fouls"), 
+                    width = 8),
+            ]
+        ),
+        html.Br(),
+        dbc.Row(
+            [
+                dbc.Col(
+                    html.H4('TOV'),
+                    width = 4),
+                dbc.Col(
+                    html.H5("Turnovers"), 
+                    width = 8),
+            ]
+        )
+    ]
+)
+
+# setup all tabs with content to display in each tab, in addition to labels, colors etc.
 tabs = html.Div(
     [
         html.H2("NBA Analytics Dashboard"),
@@ -659,13 +854,22 @@ tabs = html.Div(
                     style={"padding": "10px"},
                     label_style={"color": "#4682B4", "font-weight": "bold", "font-size": "larger", "background-color": "#f4f6f6"},
                     active_label_style={"color": "#DC143C", "font-weight": "bold", "font-size": "larger", "background-color": "#FFEFD5"}
+                ),
+                dbc.Tab(children=[
+                    html.Br(),
+                    tab4_content
+                    ],
+                    label="Glossary",
+                    style={"padding": "10px"},
+                    label_style={"color": "#4682B4", "font-weight": "bold", "font-size": "larger", "background-color": "#f4f6f6"},
+                    active_label_style={"color": "#DC143C", "font-weight": "bold", "font-size": "larger", "background-color": "#FFEFD5"}
                 )
             ]
         ),
     ]
 )
 
-
+# app layout setup to display all tabs designed above
 app.layout = html.Div(
     [
         dbc.Container(
@@ -677,79 +881,163 @@ app.layout = html.Div(
     ]
 )
 
+
 # Set up callbacks/backend
 
 # metrics
+
+# callback for career_FG metric card
 @app.callback(
     Output(component_id="card-01", component_property="children"), 
     Input("player-widget", "value"),
     Input('stage-widget', 'value'))
 def metric_FG(player, stage):
+    """
+    Takes Player Name and Stage (Regular Season vs. Playoffs) 
+    and returns overall Career Field Goal Percentage.
+    
+    Arguments:
+    player - (str) the player name
+    stage - (str) stage of the season (Regular vs. Playoffs)
+    """
     career_FG = df_metrics[(df_metrics['Player'] == player) & (df_metrics['Stage'] == stage)]['career_FG_%'].iloc[0]
     return (str(career_FG) + ' %')
 
+# callback for career_FT metric card
 @app.callback(
     Output(component_id="card-02", component_property="children"), 
     Input("player-widget", "value"),
     Input('stage-widget', 'value'))
 def metric_FT(player, stage):
+    """
+    Takes Player Name and Stage (Regular Season vs. Playoffs) 
+    and returns overall Career Free Throw Percentage.
+    
+    Arguments:
+    player - (str) the player name
+    stage - (str) stage of the season (Regular vs. Playoffs)
+    """
     career_FT = df_metrics[(df_metrics['Player'] == player) & (df_metrics['Stage'] == stage)]['career_FT_%'].iloc[0]
     return (str(career_FT) + ' %')
 
+# callback for career 3-points metric card
 @app.callback(
     Output(component_id="card-03", component_property="children"), 
     Input("player-widget", "value"),
     Input('stage-widget', 'value'))
 def metric_3PT(player, stage):
+    """
+    Takes Player Name and Stage (Regular Season vs. Playoffs) 
+    and returns overall Career 3-pointers made Percentage.
+    
+    Arguments:
+    player - (str) the player name
+    stage - (str) stage of the season (Regular vs. Playoffs)
+    """
     career_3PT = df_metrics[(df_metrics['Player'] == player) & (df_metrics['Stage'] == stage)]['career_3PT_%'].iloc[0]
     return (str(career_3PT) + ' %')
 
+# callback for average minutes played metric card
 @app.callback(
     Output(component_id="card-04", component_property="children"), 
     Input("player-widget", "value"),
     Input('stage-widget', 'value'))
 def metric_minutes(player, stage):
+    """
+    Takes Player Name and Stage (Regular Season vs. Playoffs) 
+    and returns average minutes played per game.
+    
+    Arguments:
+    player - (str) the player name
+    stage - (str) stage of the season (Regular vs. Playoffs)
+    """
     avg_minutes = df_metrics[(df_metrics['Player'] == player) & (df_metrics['Stage'] == stage)]['Minutes_per_game'].iloc[0]
     return str(avg_minutes) + ' minutes'
 
+# callback for career_FG metric card
 @app.callback(
     Output(component_id="card-05", component_property="children"), 
     Input("player-widget", "value"),
     Input('stage-widget', 'value'))
 def metric_FG(player, stage):
+    """
+    Takes Player Name and Stage (Regular Season vs. Playoffs) 
+    and returns overall Career Field Goal Percentage.
+    
+    Arguments:
+    player - (str) the player name
+    stage - (str) stage of the season (Regular vs. Playoffs)
+    """
     career_FG = df_metrics[(df_metrics['Player'] == player) & (df_metrics['Stage'] == stage)]['career_FG_%'].iloc[0]
     return (str(career_FG) + ' %')
 
+# callback for career_FT metric card
 @app.callback(
     Output(component_id="card-06", component_property="children"), 
     Input("player-widget", "value"),
     Input('stage-widget', 'value'))
 def metric_FT(player, stage):
+    """
+    Takes Player Name and Stage (Regular Season vs. Playoffs) 
+    and returns overall Career Free Throw Percentage.
+    
+    Arguments:
+    player - (str) the player name
+    stage - (str) stage of the season (Regular vs. Playoffs)
+    """
     career_FT = df_metrics[(df_metrics['Player'] == player) & (df_metrics['Stage'] == stage)]['career_FT_%'].iloc[0]
     return (str(career_FT) + ' %')
 
+# callback for career 3-points metric card
 @app.callback(
     Output(component_id="card-07", component_property="children"), 
     Input("player-widget", "value"),
     Input('stage-widget', 'value'))
 def metric_3PT(player, stage):
+    """
+    Takes Player Name and Stage (Regular Season vs. Playoffs) 
+    and returns overall Career 3-pointers made Percentage.
+    
+    Arguments:
+    player - (str) the player name
+    stage - (str) stage of the season (Regular vs. Playoffs)
+    """
     career_3PT = df_metrics[(df_metrics['Player'] == player) & (df_metrics['Stage'] == stage)]['career_3PT_%'].iloc[0]
     return (str(career_3PT) + ' %')
 
+# callback for average minutes played metric card
 @app.callback(
     Output(component_id="card-08", component_property="children"), 
     Input("player-widget", "value"),
     Input('stage-widget', 'value'))
 def metric_minutes(player, stage):
+    """
+    Takes Player Name and Stage (Regular Season vs. Playoffs) 
+    and returns average minutes played per game.
+    
+    Arguments:
+    player - (str) the player name
+    stage - (str) stage of the season (Regular vs. Playoffs)
+    """
     avg_minutes = df_metrics[(df_metrics['Player'] == player) & (df_metrics['Stage'] == stage)]['Minutes_per_game'].iloc[0]
     return str(avg_minutes) + ' minutes'
 
 # tab 1
+
+# callback for Average Points by Season chart
 @app.callback(
     Output('chart-1', 'srcDoc'),
     Input('player-widget', 'value'),
     Input('stage-widget', 'value'))
 def plot_altair(xcol, ycol):
+    """
+    Takes Player Name and Stage (Regular Season vs. Playoffs) 
+    and returns Average Points by Season chart.
+    
+    Arguments:
+    xcol - (str) the player name
+    ycol - (str) stage of the season (Regular vs. Playoffs)
+    """
     chart = alt.Chart(df_chart_1[(df_chart_1['Player'] == xcol) & (df_chart_1['Stage'] == ycol)]).mark_bar().encode(
         y = alt.Y('sum(Points_per_game)', title = 'Points'),
         x = alt.X('Season:O'), 
@@ -758,11 +1046,20 @@ def plot_altair(xcol, ycol):
         ).properties(title='Average Points by Season', width=240, height = 160)
     return chart.to_html()
 
+# callback for Average Assists by Season chart
 @app.callback(
     Output('chart-2', 'srcDoc'),
     Input('player-widget', 'value'),
     Input('stage-widget', 'value'))
 def plot_altair(xcol, ycol):
+    """
+    Takes Player Name and Stage (Regular Season vs. Playoffs) 
+    and returns Average Assists by Season chart.
+    
+    Arguments:
+    xcol - (str) the player name
+    ycol - (str) stage of the season (Regular vs. Playoffs)
+    """
     chart = alt.Chart(df_chart_2[(df_chart_2['Player'] == xcol) & (df_chart_2['Stage'] == ycol)]).mark_line().encode(
         y = alt.Y('Assists_per_game', title = 'Assists', scale=alt.Scale(zero=False)),
         x = alt.X('Season:O'),
@@ -770,11 +1067,20 @@ def plot_altair(xcol, ycol):
         ).properties(title='Average Assists by Season', width=240, height = 200)
     return chart.to_html()
 
+# callback for Average Rebounds by Season chart
 @app.callback(
     Output('chart-3', 'srcDoc'),
     Input('player-widget', 'value'),
     Input('stage-widget', 'value'))
 def plot_altair(xcol, ycol):
+    """
+    Takes Player Name and Stage (Regular Season vs. Playoffs) 
+    and returns Average Rebounds by Season chart.
+    
+    Arguments:
+    xcol - (str) the player name
+    ycol - (str) stage of the season (Regular vs. Playoffs)
+    """
     chart = alt.Chart(df_chart_3[(df_chart_3['Player'] == xcol) & (df_chart_3['Stage'] == ycol)]).mark_bar().encode(
         y = alt.Y('sum(Rebounds_per_game)', title = 'Rebounds'),
         x = alt.X('Season:O'), 
@@ -783,11 +1089,20 @@ def plot_altair(xcol, ycol):
         ).properties(title='Average Rebounds by Season', width=240, height = 160)
     return chart.to_html()
 
+# callback for Average Blocks & Steals by Season chart
 @app.callback(
     Output('chart-4', 'srcDoc'),
     Input('player-widget', 'value'),
     Input('stage-widget', 'value'))
 def plot_altair(xcol, ycol):
+    """
+    Takes Player Name and Stage (Regular Season vs. Playoffs) 
+    and returns Average Blocks & Steals by Season chart.
+    
+    Arguments:
+    xcol - (str) the player name
+    ycol - (str) stage of the season (Regular vs. Playoffs)
+    """
     chart = alt.Chart(df_chart_4[(df_chart_4['Player'] == xcol) & (df_chart_4['Stage'] == ycol)]).mark_line().encode(
         y = alt.Y('per_game', title = 'Count'),
         x = alt.X('Season:O'),
@@ -796,11 +1111,20 @@ def plot_altair(xcol, ycol):
         ).properties(title='Average Blocks & Steals by Season', width=430, height = 160)
     return chart.to_html()
 
+# callback for Average Turnovers & Fouls by Season chart
 @app.callback(
     Output('chart-5', 'srcDoc'),
     Input('player-widget', 'value'),
     Input('stage-widget', 'value'))
 def plot_altair(xcol, ycol):
+    """
+    Takes Player Name and Stage (Regular Season vs. Playoffs) 
+    and returns Average Turnovers & Fouls by Season chart.
+    
+    Arguments:
+    xcol - (str) the player name
+    ycol - (str) stage of the season (Regular vs. Playoffs)
+    """
     chart = alt.Chart(df_chart_5[(df_chart_5['Player'] == xcol) & (df_chart_5['Stage'] == ycol)]).mark_line().encode(
         y = alt.Y('per_game', title = 'Count'),
         x = alt.X('Season:O'),
@@ -810,11 +1134,21 @@ def plot_altair(xcol, ycol):
     return chart.to_html()
 
 # tab 2
+
+# callback for Average Shooting Percentages by Season chart
 @app.callback(
     Output('chart-11', 'srcDoc'),
     Input('player-widget-2', 'value'),
     Input('stage-widget-2', 'value'))
 def plot_altair(xcol, ycol):
+    """
+    Takes Player Name and Stage (Regular Season vs. Playoffs) 
+    and returns Average Shooting Percentages by Season chart.
+    
+    Arguments:
+    xcol - (str) the player name
+    ycol - (str) stage of the season (Regular vs. Playoffs)
+    """
     chart = alt.Chart(df_chart_11[(df_chart_11['Player'] == xcol) & (df_chart_11['Stage'] == ycol)]).mark_line().encode(
         y = alt.Y('per_game', title = 'Shooting Percentage', scale=alt.Scale(zero=False)),
         x = alt.X('Season:O'),
@@ -823,23 +1157,41 @@ def plot_altair(xcol, ycol):
         ).properties(title='Average Shooting Percentages by Season', width=430, height = 160)
     return chart.to_html()
 
+# callback for True Shooting Percentage by Season chart
 @app.callback(
     Output('chart-12', 'srcDoc'),
     Input('player-widget-2', 'value'),
     Input('stage-widget-2', 'value'))
 def plot_altair(xcol, ycol):
+    """
+    Takes Player Name and Stage (Regular Season vs. Playoffs) 
+    and returns True Shooting Percentage by Season chart.
+    
+    Arguments:
+    xcol - (str) the player name
+    ycol - (str) stage of the season (Regular vs. Playoffs)
+    """
     chart = alt.Chart(df_chart_12[(df_chart_12['Player'] == xcol) & (df_chart_12['Stage'] == ycol)]).mark_bar().encode(
-        y = alt.Y('True shooting percentage', title = 'True Shooting Percentage', scale=alt.Scale(zero=False)),
+        y = alt.Y('True shooting percentage', title = 'True Shooting Percentage'),
         x = alt.X('Season:O'),
         tooltip=['Player', 'Stage', 'Season', 'True shooting percentage']
         ).properties(title='True Shooting Percentage by Season', width=430, height = 190)
     return chart.to_html()
 
+# callback for Player Productivity by Season chart
 @app.callback(
     Output('chart-13', 'srcDoc'),
     Input('player-widget-2', 'value'),
     Input('stage-widget-2', 'value'))
 def plot_altair(xcol, ycol):
+    """
+    Takes Player Name and Stage (Regular Season vs. Playoffs) 
+    and returns Player Productivity by Season chart.
+    
+    Arguments:
+    xcol - (str) the player name
+    ycol - (str) stage of the season (Regular vs. Playoffs)
+    """
     chart = alt.Chart(df_chart_13[(df_chart_13['Player'] == xcol) & (df_chart_13['Stage'] == ycol)]).mark_bar().encode(
         y = alt.Y('Game Score', title = 'Game Score', scale=alt.Scale(zero=False)),
         x = alt.X('Season:O'),
@@ -847,11 +1199,20 @@ def plot_altair(xcol, ycol):
         ).properties(title='Player Productivity by Season', width=430, height = 190)
     return chart.to_html()
 
+# callback for Player Productivity by Minutes Played chart
 @app.callback(
     Output('chart-14', 'srcDoc'),
     Input('player-widget-2', 'value'),
     Input('stage-widget-2', 'value'))
 def plot_altair(xcol, ycol):
+    """
+    Takes Player Name and Stage (Regular Season vs. Playoffs) 
+    and returns Player Productivity by Minutes Played chart.
+    
+    Arguments:
+    xcol - (str) the player name
+    ycol - (str) stage of the season (Regular vs. Playoffs)
+    """
     chart = alt.Chart(df_chart_13[df_chart_13['Player'] == xcol]).mark_circle(size=60).encode(
         x = alt.X('Minutes Played', scale=alt.Scale(zero=False)),
         y = alt.Y('Game Score', scale=alt.Scale(zero=False)),
@@ -868,7 +1229,14 @@ def plot_altair(xcol, ycol):
     Output('chart-21', 'srcDoc'),
     Input('statistic-1', 'value'))
 def simple_stat(stat):
-    # Use dictionary key to get the proper column
+    """
+    Takes the metric/statistic selected by the user 
+    and returns a chart of that particular metric by Season,
+    relevant column is selected dynamically from selection.
+    
+    Arguments:
+    stat - (str) metric/statistic selected by the user 
+    """
     leave_list = ['Average Player Minutes Played per Game', 'Average Player Weight (lbs)', 'Average Player Height (cm)', 'Average Player Body Mass Index', 'Ratio of Field Goals That Are 3-pointers']
     stat_label = stat_dict[stat]
     if stat not in leave_list:
@@ -882,7 +1250,14 @@ def simple_stat(stat):
     Output('chart-22', 'srcDoc'),
     Input('statistic-1', 'value'))
 def simple_stat_age(stat):
-    # Use dictionary key to get the proper column
+    """
+    Takes the metric/statistic selected by the user 
+    and returns a chart of that particular metric by Age,
+    relevant column is selected dynamically from selection.
+    
+    Arguments:
+    stat - (str) metric/statistic selected by the user 
+    """
     stat_label = stat_dict[stat]
     line_chart = alt.Chart(NBA_age_sum, title=alt.TitleParams(text=stat)).mark_line(color="#969696", size=3).encode(alt.Y(stat_label, scale= alt.Scale(zero=False),
     axis=alt.Axis(grid=False), title=None), alt.X('Age', axis=alt.Axis(grid=False))).configure_view(strokeWidth=0).properties(width=430, height = 200)
@@ -893,7 +1268,15 @@ def simple_stat_age(stat):
     Output('chart-23', 'srcDoc'),
     Input('statistic-1', 'value'))
 def type_stat(stat):
-    # Use dictionary key to get the proper column
+    """
+    Takes the metric/statistic selected by the user 
+    and returns a chart of that particular metric by Season
+    where regular season and playoffs are shown separately,
+    relevant column is selected dynamically from selection.
+    
+    Arguments:
+    stat - (str) metric/statistic selected by the user 
+    """
     leave_list = ['Average Player Minutes Played per Game', 'Average Player Weight (lbs)', 'Average Player Height (cm)', 'Average Player Body Mass Index', 'Ratio of Field Goals That Are 3-pointers']
     stat_label = stat_dict[stat]
     if stat not in leave_list:
