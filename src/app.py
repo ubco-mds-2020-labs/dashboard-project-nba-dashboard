@@ -672,7 +672,7 @@ tab4_content = html.Div(
                     html.H4('True Shooting Percentage'),
                     width = 4),
                 dbc.Col(
-                    html.H5('is a measure of shooting efficiency that takes into account field goals, 3-point field goals, and free throws. Formula is Points / (2 * TSA). where TSA is - True Shooting Attempts; the formula is FGA + 0.44 * FTA.'), 
+                    html.H5('is a measure of shooting efficiency that takes into account field goals, 3-point field goals, and free throws. Formula is Points / (2 * TSA) where TSA is - True Shooting Attempts; the formula is FGA + 0.44 * FTA.'), 
                     width = 8),
             ]
         ),
